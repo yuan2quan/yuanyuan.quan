@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YuanYuan Quan - Environmental Scientist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #004d80; /* 联合国蓝风格 */
+            --secondary-color: #f0f4f8;
+            --accent-color: #2e7d32;  /* 生态绿 */
+            --text-color: #333;
+            --light-text: #666;
+            --bg-color: #f9f9f9;
+            --white: #ffffff;
+            --max-width: 960px;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            background-color: var(--bg-color);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Merriweather', serif;
+            color: var(--primary-color);
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            background: var(--white);
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+            min-height: 100vh;
+        }
+
+        /* 顶部导航 */
+        header {
+            padding: 20px 40px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--light-text);
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* 个人简介区 */
+        .hero {
+            padding: 60px 40px;
+            display: flex;
+            align-items: flex-start;
+            gap: 50px;
+            background: linear-gradient(to bottom, #fff, #f4f7f6);
+        }
+
+        .profile-img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            flex-shrink: 0;
+        }
+
+        .hero-content h1 {
+            font-size: 2.2rem;
+            margin: 0 0 10px 0;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--light-text);
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .hero-bio {
+            font-size: 1rem;
+            margin-bottom: 25px;
+            max-width: 600px;
+        }
+
+        /* 状态横幅 (Open to Work) */
+        .status-banner {
+            background-color: #e8f5e9;
+            border-left: 5px solid var(--accent-color);
+            padding: 15px 20px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+
+        .status-banner strong {
+            color: var(--accent-color);
+        }
+
+        /* 社交图标栏 */
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: #555;
+            transition: all 0.3s;
+        }
+
+        .social-btn:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* 主要内容区 */
+        .main-content {
+            padding: 40px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        /* 研究兴趣标签 */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            background-color: #e3f2fd;
+            color: #1565c0;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* 列表样式 */
+        .item-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .item {
+            margin-bottom: 25px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .item-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #2c3e50;
+        }
+
+        .item-meta {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .item-desc {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background-color: #f9f9f9;
+            color: #888;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 40px 20px;
+            }
+            
+            .header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .profile-img {
+                width: 180px;
+                height: 180px;
+            }
+
+            .item-header {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="logo">YuanYuan Quan, Ph.D.</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero" id="about">
+        <img src="profile.jpg" alt="YuanYuan Quan" class="profile-img">
+        
+        <div class="hero-content">
+            <h1>YuanYuan Quan</h1>
+            <div class="hero-subtitle">
+                Ph.D. in Environmental Science | Researcher at FAO<br>
+                Specializing in Climate Change, Biodiversity & Ecosystem Services
+            </div>
+            
+            <div class="status-banner">
+                <i class="fas fa-briefcase"></i> 
+                <strong>Current Status:</strong> Research Intern at FAO. Seeking opportunities in international organizations (UNEP, UNDP, WMO, FAO) related to environmental policy and climate action.
+            </div>
+
+            <p class="hero-bio">
+                I am an environmental scientist dedicated to bridging the gap between ecological research and global policy. With a Ph.D. from Lund University and current experience at the United Nations (FAO), I use data-driven approaches to address challenges in biodiversity conservation, ecosystem resilience, and climate change adaptation.
+            </p>
+
+            <div class="social-icons">
+                <a href="mailto:yuanyuan.quan930@gmail.com" class="social-btn">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+                <a href="https://www.linkedin.com/in/yuanyuanquan/" target="_blank" class="social-btn">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://scholar.google.com/citations?user=2pG3uIcAAAAJ&hl=en" target="_blank" class="social-btn">
+                    <i class="fas fa-graduation-cap"></i> Google Scholar
+                </a>
+                <a href="https://www.researchgate.net/profile/Yuanyuan-Quan?ev=hdr_xprf" target="_blank" class="social-btn">
+                    <i class="fab fa-researchgate"></i> ResearchGate
+                </a>
+                <a href="https://www.cec.lu.se/yuanyuan-quan" target="_blank" class="social-btn">
+                    <i class="fas fa-university"></i> Lund Profile
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <section>
+            <h2 class="section-title">Focus Areas</h2>
+            <div class="tags">
+                <span class="tag">Climate Change Adaptation</span>
+                <span class="tag">Biodiversity Conservation</span>
+                <span class="tag">Ecosystem Services</span>
+                <span class="tag">Nature-Positive Agriculture</span>
+                <span class="tag">Environmental Data Analysis</span>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2 class="section-title">Professional Experience</h2>
+            <ul class="item-list">
+                <li class="item">
+                    <div class="item-header">
+                        <span class="item-title">Research Intern (Researcher)</span>
+                        <span class="item-meta">2025 - Present | Rome, Italy</span>
+                    </div>
+                    <div class="item-desc" style="color: var(--primary-color); font-weight: 500; margin-bottom: 5px;">
+                        Food and Agriculture Organization of the United Nations (FAO)
+                    </div>
+                    <div class="item-desc">
+                        Plant Production and Protection Division (NSP). Conducting systematic reviews and data analysis on legume-based agricultural systems. Supporting policy development for nature-positive agricultural practices and contributing to global reports on sustainable food systems.
+                    </div>
+                </li>
+
+                <li class="item">
+                    <div class="item-header">
+                        <span class="item-title">Doctoral Researcher</span>
+                        <span class="item-meta">2020 - 2025 | Lund, Sweden</span>
+                    </div>
+                    <div class="item-desc" style="color: var(--primary-color); font-weight: 500; margin-bottom: 5px;">
+                        Centre for Environmental and Climate Science (CEC), Lund University
+                    </div>
+                    <div class="item-desc">
+                        Led multi-year research projects on landscape ecology and plant-insect interactions. Utilized advanced statistical modeling (R, Python) to assess ecosystem resilience under climate stress. Member of the ClimBEco Graduate Research School.
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section id="publications">
+            <h2 class="section-title">Selected Publications</h2>
+            <ul class="item-list">
+                <li class="item">
+                    <div class="item-title">Landscape composition influences invertebrate herbivory on flowering forbs in semi-natural grasslands</div>
+                    <div class="item-desc">
+                        <strong>Quan, Y.</strong>, Hederström, V., Ekroos, J., et al. (2025) <br>
+                        <em>Basic and Applied Ecology</em>, 85, 23-35.
+                    </div>
+                </li>
+                <li class="item">
+                    <div class="item-title">Diversity in insect responses to landscape composition drives flower visitation across semi-natural grassland plants</div>
+                    <div class="item-desc">
+                        Hederström, V., Krausl, T., <strong>Quan, Y.</strong>, et al. (2025) <br>
+                        <em>Agriculture, Ecosystems & Environment</em>, 383, 109514.
+                    </div>
+                </li>
+                <li class="item">
+                    <div class="item-title">Pollinator-mediated effects of landscape-scale land use on grassland plant community composition and ecosystem functioning</div>
+                    <div class="item-desc">
+                        Hederström, V., ... <strong>Quan, Y.</strong>, et al. (2024) <br>
+                        <em>Biological Reviews</em>, 99(3), 675-698.
+                    </div>
+                </li>
+            </ul>
+            <div style="margin-top: 15px;">
+                <a href="https://scholar.google.com/citations?user=2pG3uIcAAAAJ&hl=en" target="_blank">
+                    View full list on Google Scholar &rarr;
+                </a>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">Contact</h2>
+            <p>I am actively seeking opportunities within international organizations (UNEP, UNDP, WMO, FAO) where I can apply my scientific expertise to global environmental challenges.</p>
+            <p>
+                <i class="fas fa-envelope" style="color: var(--primary-color); width: 20px;"></i> 
+                <a href="mailto:yuanyuan.quan930@gmail.com">yuanyuan.quan930@gmail.com</a>
+            </p>
+            <p>
+                <i class="fab fa-linkedin" style="color: var(--primary-color); width: 20px;"></i>
+                <a href="https://www.linkedin.com/in/yuanyuanquan/" target="_blank">linkedin.com/in/yuanyuanquan</a>
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2025 YuanYuan Quan. Built for Science & Sustainability.
+    </footer>
+</div>
+
+</body>
+</html>
